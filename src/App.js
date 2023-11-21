@@ -3,6 +3,7 @@ import './App.css';
 import FirstVisit from './components/Loading/FirstVisit';
 import Navigation from './components/UI/Navigation';
 import Todos from './components/Todos/Todos';
+import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
   const checkUser = window.localStorage.getItem('wasHere');
@@ -12,7 +13,10 @@ const App = () => {
     <div className="App">
       {!checkUser && <FirstVisit />}
       <Navigation />
-      <Todos />
+      <Routes>
+        <Route path="/" element={<Todos />} />
+        <Route path="/completed" element={<Todos />} />
+      </Routes>
     </div>
   );
 };
