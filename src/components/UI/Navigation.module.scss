@@ -1,0 +1,14 @@
+.nav {
+  padding: 20px 0;
+}
+.list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.link {
+  color: #9e9e9e;
+  &__active {
+    color: #131313;
+  }
+}
