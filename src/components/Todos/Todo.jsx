@@ -18,8 +18,8 @@ const Todo = ({ addTodo, deleteTodo, todo, index }) => {
         placeholder={todo}
         onBlur={(e) => inputHandler(e)}
         onKeyDown={(e) => inputHandler(e)}
-        value={text}
         onChange={(e) => setText(e.target.value)}
+        value={text}
         type="text"
         className={styles.text}
       />
