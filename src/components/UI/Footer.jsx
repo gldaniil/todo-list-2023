@@ -9,7 +9,10 @@ const Footer = () => {
         <div className={styles.socials}>
           <RiGithubFill className={styles.icon} />
         </div>
-        <Tooltip text={'Текст при наведении'} />
+        <Tooltip
+          text={`«Планировщик дел» позволяет добавлять, редактировать, архивировать и удалять задачи.
+            На данный момент перечень задач хранится только в локальном хранилище данных - браузере.`}
+        />
       </div>
     </footer>
   );
