@@ -3,9 +3,9 @@
   display: inline-block;
 }
 .tooltip {
-  min-width: 200px;
+  min-width: 300px;
   position: absolute;
-  top: calc(-100% - 50px);
+  top: calc(-100% - 150px);
   transform: translateX(-50%);
   border-radius: 4px;
   padding: 15px;
@@ -13,5 +13,9 @@
   background-color: #fff;
   color: #000;
   font-size: 14px;
+  text-align: center;
   z-index: 1;
+}
+.icon {
+  cursor: help;
 }
