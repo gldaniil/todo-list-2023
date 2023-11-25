@@ -14,6 +14,7 @@ const Todo = ({ addTodo, deleteTodo, todo, index }) => {
 
   return (
     <div className={styles.todo}>
+      {index !== undefined && <p className={styles.number}>{index + 1}</p>}
       <input
         placeholder={todo}
         onBlur={(e) => inputHandler(e)}
@@ -27,7 +28,7 @@ const Todo = ({ addTodo, deleteTodo, todo, index }) => {
         <div className={styles.actions}>
           <RiAddFill className={styles.icon} />
           <RiDeleteBin5Line
-            onClick={() => deleteTodo(todo, index)}
+            onClick={() => deleteTodo(index)}
             className={styles.icon}
           />
         </div>

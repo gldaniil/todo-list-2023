@@ -3,6 +3,13 @@
   margin-bottom: 7px;
   display: flex;
   gap: 10px;
+  transition: width 0.2s ease-in-out;
+}
+.number {
+  min-width: 20px;
+  align-self: center;
+  text-align: center;
+  word-break: normal;
 }
 .text {
   width: 100%;
