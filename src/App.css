@@ -1,8 +1,11 @@
 .App {
   width: 600px;
   height: 800px;
-  margin: 30px auto 0;
+  min-height: 100%;
+  margin: 30px auto;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
   background-color: #fff;
   box-shadow: 0px 0px 7px 2px #ffffff;
 }
