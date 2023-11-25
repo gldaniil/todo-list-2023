@@ -3,6 +3,7 @@ import './styles/reset.scss';
 import './App.css';
 import FirstVisit from './components/Loading/FirstVisit';
 import Navigation from './components/UI/Navigation';
+import Footer from './components/UI/Footer';
 import Todos from './components/Todos/Todos';
 import CompletedTodos from './components/Todos/CompletedTodos';
 
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/" element={<Todos />} />
         <Route path="/completed" element={<CompletedTodos />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
