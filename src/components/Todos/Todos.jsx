@@ -17,17 +17,17 @@ const Todos = () => {
     if (index) {
       setTodos((prev) => prev.map((item, i) => (i !== index ? item : todo)));
     } else {
-      setTodos((prev) => [...prev, todo]);
+      setTodos((prev) => (prev ? [...prev, todo] : [todo]));
     }
   };
 
-  const deleteTodoHandle = (todo, index) => {
+  const deleteTodoHandle = (index) => {
     setTodos((prev) => prev.filter((_, i) => i !== index));
   };
 
   return (
     <div className={styles.container}>
-      {todos.length > 0 &&
+      {todos &&
         todos.map((todo, i) => {
           return (
             <Todo
