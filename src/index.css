@@ -2,4 +2,5 @@ body {
   font-family: 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   background-color: #d4b9e6;
+  overflow-y: hidden;
 }
