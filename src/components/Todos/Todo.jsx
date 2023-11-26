@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { RiAddFill, RiDeleteBin5Line } from 'react-icons/ri';
 import styles from './Todo.module.scss';
 
-const Todo = ({ addTodo, deleteTodo, todo, index }) => {
+const Todo = ({ addTodo, deleteTodo, completeTodo, todo, index }) => {
   const [text, setText] = useState('');
 
   const inputHandler = (e) => {
@@ -26,7 +26,10 @@ const Todo = ({ addTodo, deleteTodo, todo, index }) => {
       />
       {index !== undefined && (
         <div className={styles.actions}>
-          <RiAddFill className={styles.icon} />
+          <RiAddFill
+            onClick={() => completeTodo(todo)}
+            className={styles.icon}
+          />
           <RiDeleteBin5Line
             onClick={() => deleteTodo(index)}
             className={styles.icon}
