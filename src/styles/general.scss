@@ -1,13 +1,2 @@
 $main-text-color: #1b1b1b;
 $input-text-hover-color: #0e0088;
-
-.container {
-  padding: 0 20px;
-  flex: 1 1 auto;
-  margin-top: 10px;
-  overflow-y: scroll;
-  scrollbar-width: none;
-}
-.container::-webkit-scrollbar {
-  width: 0;
-}

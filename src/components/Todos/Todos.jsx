@@ -35,7 +35,7 @@ const Todos = () => {
   };
 
   return (
-    <div className="container">
+    <>
       {todos &&
         todos.map((todo, i) => {
           return (
@@ -50,7 +50,7 @@ const Todos = () => {
           );
         })}
       <Todo addTodo={addTodoHandle} />
-    </div>
+    </>
   );
 };
 

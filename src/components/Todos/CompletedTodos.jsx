@@ -15,7 +15,7 @@ const CompletedTodos = () => {
   }, [todos]);
 
   return (
-    <div className="container">
+    <>
       {todos ? (
         todos.map((todo, i) => {
           return <Todo key={i} todo={todo} index={i} />;
@@ -23,7 +23,7 @@ const CompletedTodos = () => {
       ) : (
         <h2 className={styles.title}>Пока что выполненных задач нет ;</h2>
       )}
-    </div>
+    </>
   );
 };
 

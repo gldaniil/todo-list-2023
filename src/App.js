@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './styles/reset.scss';
-import './App.css';
+import styles from './App.module.css';
 import FirstVisit from './components/Loading/FirstVisit';
 import Navigation from './components/UI/Navigation';
 import Footer from './components/UI/Footer';
@@ -12,13 +12,15 @@ const App = () => {
   checkUser ? 0 : window.localStorage.setItem('wasHere', true);
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       {!checkUser && <FirstVisit />}
       <Navigation />
-      <Routes>
-        <Route path="/" element={<Todos />} />
-        <Route path="/completed" element={<CompletedTodos />} />
-      </Routes>
+      <div className={styles.container}>
+        <Routes>
+          <Route path="/" element={<Todos />} />
+          <Route path="/completed" element={<CompletedTodos />} />
+        </Routes>
+      </div>
       <Footer />
     </div>
   );
