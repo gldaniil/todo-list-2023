@@ -16,12 +16,13 @@ const CompletedTodos = () => {
 
   return (
     <div className="container">
-      {/* {todos } */}
-      <h2 className={styles.title}>Пока что выполненных задач нет ;(</h2>
-      {todos &&
+      {todos ? (
         todos.map((todo, i) => {
           return <Todo key={i} todo={todo} index={i} />;
-        })}
+        })
+      ) : (
+        <h2 className={styles.title}>Пока что выполненных задач нет ;</h2>
+      )}
     </div>
   );
 };
