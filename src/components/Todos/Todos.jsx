@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Todo from './Todo';
-import styles from './Todos.module.scss';
 
 const Todos = () => {
   const [todos, setTodos] = useState([]);
@@ -36,7 +35,7 @@ const Todos = () => {
   };
 
   return (
-    <div className={'container ' + styles.container}>
+    <div className="container">
       {todos &&
         todos.map((todo, i) => {
           return (
