@@ -46,6 +46,7 @@ const Todos = () => {
               completeTodo={completeTodoHandle}
               todo={todo}
               index={i}
+              show={true}
             />
           );
         })}
