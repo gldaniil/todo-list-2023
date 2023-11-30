@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import '../../styles/general.scss';
 import styles from './CompletedTodos.module.scss';
 import Todo from './Todo';
 
