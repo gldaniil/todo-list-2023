@@ -4,6 +4,7 @@ import FirstVisit from './components/Loading/FirstVisit';
 import Navigation from './components/UI/Navigation';
 import Footer from './components/UI/Footer';
 import Main from './components/UI/Main';
+import { BrowserRouter } from 'react-router-dom';
 
 const App = () => {
   const checkUser = window.localStorage.getItem('wasHere');
@@ -11,10 +12,12 @@ const App = () => {
 
   return (
     <div className={styles.App}>
-      {!checkUser && <FirstVisit />}
-      <Navigation />
-      <Main />
-      <Footer />
+      <BrowserRouter>
+        {!checkUser && <FirstVisit />}
+        <Navigation />
+        <Main />
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 };
