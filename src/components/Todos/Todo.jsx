@@ -3,14 +3,7 @@ import { RiAddFill, RiDeleteBin5Line } from 'react-icons/ri';
 import styles from './Todo.module.scss';
 import { Transition } from 'react-transition-group';
 
-const Todo = ({
-  addTodo,
-  deleteTodo,
-  completeTodo,
-  todo,
-  index,
-  show = false,
-}) => {
+const Todo = ({ addTodo, deleteTodo, completeTodo, todo, index }) => {
   const [text, setText] = useState('');
 
   const inputHandler = (e) => {
@@ -21,9 +14,9 @@ const Todo = ({
   };
 
   return (
-    <Transition in={show} timeout={5500}>
+    <Transition in={Boolean(todo)} timeout={0}>
       {(state) => (
-        <div className={`${styles.todo} ${styles[state]} ${state}`}>
+        <div className={`${styles.todo} ${styles[state]}`}>
           {index !== undefined && <p className={styles.number}>{index + 1}</p>}
           <input
             placeholder={todo}
