@@ -1,26 +1,39 @@
 import { useEffect, useState } from 'react';
 import styles from './CompletedTodos.module.scss';
 import Todo from './Todo';
+import Loader from '../Loading/Loader';
 
 const CompletedTodos = () => {
-  const [todos, setTodos] = useState([]);
+  // const [todos, setTodos] = useState([]);
+  const [completed, setCompleted] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setTodos(JSON.parse(window.localStorage.getItem('completed')));
+    setTimeout(() => {
+      setCompleted(JSON.parse(window.localStorage.getItem('completed')));
+      setIsLoading(true);
+    }, 2000);
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem('completed', JSON.stringify(todos));
-  }, [todos]);
+    window.localStorage.setItem('completed', JSON.stringify(completed));
+  }, [completed]);
+
+  const deleteTodoHandle = (index) => {
+    setCompleted((prev) => prev.filter((_, i) => i !== index));
+  };
 
   return (
     <>
-      {todos ? (
-        todos.map((todo, i) => {
-          return <Todo key={i} todo={todo} index={i} />;
-        })
-      ) : (
+      {!isLoading ? <Loader /> : null}
+      {!completed.length ? (
         <h2 className={styles.title}>Пока что выполненных задач нет ;</h2>
+      ) : (
+        completed.map((todo, i) => {
+          return (
+            <Todo key={i} todo={todo} index={i} deleteTodo={deleteTodoHandle} />
+          );
+        })
       )}
     </>
   );
