@@ -8,8 +8,10 @@ const Todo = ({ addTodo, deleteTodo, completeTodo, todo, index }) => {
 
   const inputHandler = (e) => {
     if ((e.target.value && e.type === 'blur') || e.code === 'Enter') {
-      addTodo(e.target.value, index);
-      setText('');
+      if (e.target.value) {
+        addTodo(e.target.value, index);
+        setText('');
+      }
     }
   };
 
