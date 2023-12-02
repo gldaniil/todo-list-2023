@@ -6,14 +6,14 @@ const Loader = () => {
     <div className={styles.wrap}>
       <div className={styles.inner}>
         <ContentLoader
+          className={styles.loader}
           speed={2}
-          width={500}
-          height={500}
-          viewBox="0 0 500 500"
           backgroundColor="#f3f3f3"
           foregroundColor="#ecebeb"
         >
-          <rect x="0" y="0" rx="10" ry="10" width="100" height="100" />
+          <rect x="0" y="0" rx="10" ry="10" className={styles.loaderBlock} />
+          <rect x="0" y="55" rx="10" ry="10" className={styles.loaderBlock} />
+          <rect x="0" y="110" rx="10" ry="10" className={styles.loaderBlock} />
         </ContentLoader>
       </div>
     </div>
