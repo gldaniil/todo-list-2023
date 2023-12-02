@@ -23,6 +23,7 @@ const Todos = () => {
       ? setTodos((prev) => prev.map((item, i) => (i !== index ? item : todo)))
       : setTodos((prev) => (prev ? [...prev, todo] : [todo]));
   };
+
   const deleteTodoHandle = (index) => {
     setTodos((prev) => prev.filter((_, i) => i !== index));
   };

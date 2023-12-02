@@ -9,15 +9,17 @@ const CompletedTodos = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       setCompleted(JSON.parse(window.localStorage.getItem('completed')));
       setIsLoading(true);
-    }, 2000);
+    }, 1000);
+    return () => clearTimeout(timeout);
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem('completed', JSON.stringify(completed));
-  }, [completed]);
+    if (isLoading)
+      window.localStorage.setItem('completed', JSON.stringify(completed));
+  }, [completed, isLoading]);
 
   const deleteTodoHandle = (index) => {
     setCompleted((prev) => prev.filter((_, i) => i !== index));
