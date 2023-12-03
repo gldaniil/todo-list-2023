@@ -13,7 +13,7 @@ const CompletedTodos = () => {
       setTodos(JSON.parse(window.localStorage.getItem('todos')));
       setCompleted(JSON.parse(window.localStorage.getItem('completed')));
       setIsLoading(true);
-    }, 1000);
+    }, 250);
     return () => clearTimeout(timeout);
   }, []);
 

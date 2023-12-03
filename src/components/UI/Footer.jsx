@@ -7,7 +7,12 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.socials}>
-          <RiGithubFill className={styles.icon} />
+          <a
+            href="https://github.com/gldaniil/todo-list-2023"
+            className={styles.link}
+          >
+            <RiGithubFill />
+          </a>
         </div>
         <Tooltip
           text={`«Планировщик дел» позволяет добавлять, редактировать, архивировать и удалять задачи.
