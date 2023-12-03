@@ -12,6 +12,7 @@
 @media (max-width: 640px) {
   .App {
     width: 100%;
+    height: calc(100% - 40px);
     margin: 20px 40px;
   }
 }
