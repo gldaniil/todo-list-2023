@@ -1,6 +1,16 @@
 $main-text-color: #1b1b1b;
 $input-text-hover-color: #0e0088;
 
+@mixin transition($prop) {
+  transition: $prop 0.25s ease-in-out;
+}
+@mixin link {
+  font-size: 16px;
+  @media (max-width: 450px) {
+    font-size: 14px;
+  }
+}
+
 @keyframes show-left {
   0% {
     opacity: 0;
