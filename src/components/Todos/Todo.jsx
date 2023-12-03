@@ -40,7 +40,7 @@ const Todo = ({
             <div className={styles.actions}>
               {completeTodo ? (
                 <RiAddFill
-                  onClick={() => completeTodo(todo)}
+                  onClick={() => completeTodo(index, todo)}
                   className={styles.icon}
                 />
               ) : (

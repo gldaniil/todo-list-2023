@@ -28,8 +28,9 @@ const Todos = () => {
     setTodos((prev) => prev.filter((_, i) => i !== index));
   };
 
-  const completeTodoHandle = (todo) => {
+  const completeTodoHandle = (index, todo) => {
     setCompleted((prev) => (prev ? [...prev, todo] : [todo]));
+    setTodos((prev) => prev.filter((_, i) => i !== index));
   };
 
   return (
