@@ -42,11 +42,7 @@ const CompletedTodos = () => {
     <>
       {!isLoading ? (
         <Loader />
-      ) : !completed.length ? (
-        <h2 className={styles.title}>
-          Выполненные задачи отсутствуют &#128558;
-        </h2>
-      ) : (
+      ) : completed && completed.length ? (
         completed.map((todo, i) => {
           return (
             <Todo
@@ -58,6 +54,10 @@ const CompletedTodos = () => {
             />
           );
         })
+      ) : (
+        <h2 className={styles.title}>
+          Выполненные задачи отсутствуют &#128558;
+        </h2>
       )}
     </>
   );
