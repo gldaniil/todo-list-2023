@@ -1,2 +1,39 @@
 $main-text-color: #1b1b1b;
 $input-text-hover-color: #0e0088;
+
+@keyframes show-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes hide-left {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+}
+@keyframes show-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
