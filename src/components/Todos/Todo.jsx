@@ -1,9 +1,16 @@
 import { useState } from 'react';
-import { RiAddFill, RiDeleteBin5Line } from 'react-icons/ri';
+import { RiAddFill, RiArrowGoBackLine, RiDeleteBin5Line } from 'react-icons/ri';
 import styles from './Todo.module.scss';
 import { Transition } from 'react-transition-group';
 
-const Todo = ({ addTodo, deleteTodo, completeTodo, todo, index }) => {
+const Todo = ({
+  addTodo,
+  deleteTodo,
+  completeTodo,
+  revertTodo,
+  todo,
+  index,
+}) => {
   const [text, setText] = useState('');
 
   const inputHandler = (e) => {
@@ -31,10 +38,17 @@ const Todo = ({ addTodo, deleteTodo, completeTodo, todo, index }) => {
           />
           {index !== undefined && (
             <div className={styles.actions}>
-              <RiAddFill
-                onClick={() => completeTodo(todo)}
-                className={styles.icon}
-              />
+              {completeTodo ? (
+                <RiAddFill
+                  onClick={() => completeTodo(todo)}
+                  className={styles.icon}
+                />
+              ) : (
+                <RiArrowGoBackLine
+                  onClick={() => revertTodo(index, todo)}
+                  className={styles.icon}
+                />
+              )}
               <RiDeleteBin5Line
                 onClick={() => deleteTodo(index)}
                 className={styles.icon}
