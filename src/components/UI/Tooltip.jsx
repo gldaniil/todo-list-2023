@@ -7,11 +7,7 @@ const Tooltip = ({ text }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
-    <div
-      className={styles.container}
-      onMouseEnter={() => setIsVisible(true)}
-      onMouseLeave={() => setIsVisible(false)}
-    >
+    <div className={styles.container} onClick={() => setIsVisible(!isVisible)}>
       <RiInformationLine className={styles.icon} />
       {
         <Transition in={isVisible} timeout={1000} mountOnEnter unmountOnExit>

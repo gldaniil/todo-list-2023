@@ -10,7 +10,6 @@ $input-text-hover-color: #0e0088;
     font-size: 14px;
   }
 }
-
 @keyframes show-left {
   0% {
     opacity: 0;
@@ -27,7 +26,7 @@ $input-text-hover-color: #0e0088;
 @keyframes hide-left {
   0% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
   50% {
     opacity: 0.7;
