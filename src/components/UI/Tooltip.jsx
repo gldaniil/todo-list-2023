@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './Tooltip.module.scss';
 import { RiInformationLine } from 'react-icons/ri';
+import { Transition } from 'react-transition-group';
 
 const Tooltip = ({ text }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,7 +13,13 @@ const Tooltip = ({ text }) => {
       onMouseLeave={() => setIsVisible(false)}
     >
       <RiInformationLine className={styles.icon} />
-      {isVisible && <div className={styles.tooltip}>{text}</div>}
+      {
+        <Transition in={isVisible} timeout={1000} mountOnEnter unmountOnExit>
+          {(state) => (
+            <div className={`${styles.tooltip} ${styles[state]}`}>{text}</div>
+          )}
+        </Transition>
+      }
     </div>
   );
 };

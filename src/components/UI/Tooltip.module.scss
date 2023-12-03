@@ -1,3 +1,4 @@
+@import '../../styles/general.scss';
 .container {
   position: relative;
   display: inline-block;
@@ -18,4 +19,13 @@
 }
 .icon {
   cursor: help;
+}
+.entering {
+  animation: show-left 0.5s forwards;
+}
+.entered {
+  animation: show-left 0.5s forwards;
+}
+.exiting {
+  animation: hide-left 0.5s forwards;
 }
